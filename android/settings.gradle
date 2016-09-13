@@ -1,0 +1,3 @@
+rootProject.name = 'ImagePickerLeo'
+
+include ':app', ':imagepickermodule'
