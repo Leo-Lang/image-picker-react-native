@@ -35,7 +35,7 @@ public class ImagePickerModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void multiImagePicker(boolean isShowCamera,Callback errorCallback, final Callback successCallback){
-        Log.e(TAG, "langneng android multiImagePicker has been called.");
+        Log.e(TAG, "langneng android multiImagePicker has been called image-picker-react-native.");
         selectedImages = new WritableNativeArray();
         AndroidImagePicker.getInstance().pickMulti(getCurrentActivity(),isShowCamera,new AndroidImagePicker.OnImagePickCompleteListener(){
 

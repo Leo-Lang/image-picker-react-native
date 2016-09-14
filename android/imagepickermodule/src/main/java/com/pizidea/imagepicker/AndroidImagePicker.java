@@ -335,7 +335,11 @@ public class AndroidImagePicker {
     private File createImageSaveFile(Context ctx){
         if(Util.isStorageEnable()){
             // 已挂载
+            Log.e(TAG, "langneng createImageSaveFile StorageEnable");
             File pic = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+//            File pic = Environment.getExternalStorageDirectory();
+
+//            File pic = ctx.getExternalFilesDir(Environment.DIRECTORY_PICTURES);
             if(!pic.exists()){
                 pic.mkdirs();
             }
@@ -347,6 +351,7 @@ public class AndroidImagePicker {
             return tmpFile;
         }else{
             //File cacheDir = ctx.getCacheDir();
+            Log.e(TAG, "langneng createImageSaveFile not StorageEnable");
             File cacheDir = Environment.getDataDirectory();
             String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.CHINA).format(new Date());
             String fileName = "IMG_" + timeStamp ;

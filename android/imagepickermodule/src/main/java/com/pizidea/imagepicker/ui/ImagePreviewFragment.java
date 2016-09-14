@@ -51,7 +51,7 @@ import java.util.List;
 public class ImagePreviewFragment extends Fragment {
     private static final String TAG = ImagePreviewFragment.class.getSimpleName();
 
-    Activity mContext;
+    static Activity mContext;
 
     ViewPager mViewPager;
     TouchImageAdapter mAdapter ;
@@ -59,9 +59,9 @@ public class ImagePreviewFragment extends Fragment {
     List<ImageItem> mImageList;
     private int mCurrentItemPosition = 0;
 
-    private boolean enableSingleTap = true;//singleTap to do something
+    private static boolean enableSingleTap = true;//singleTap to do something
 
-    ImgLoader mImagePresenter;//interface to load image,you can implements it with your own code
+    static ImgLoader mImagePresenter;//interface to load image,you can implements it with your own code
     AndroidImagePicker androidImagePicker;
 
     @Override
@@ -79,6 +79,7 @@ public class ImagePreviewFragment extends Fragment {
         View contentView = inflater.inflate(R.layout.fragment_preview,null);
         mImageList = androidImagePicker.getImageItemsOfCurrentImageSet();
         mCurrentItemPosition = getArguments().getInt(AndroidImagePicker.KEY_PIC_SELECTED_POSITION,0);
+        Log.e(TAG, "langneng ImagePreviewFragment onCreateView new UilImgLoader");
         mImagePresenter = new UilImgLoader();
         initView(contentView);
         return contentView;
@@ -157,7 +158,7 @@ public class ImagePreviewFragment extends Fragment {
     }
 
     @SuppressLint("ValidFragment")
-    private class SinglePreviewFragment extends Fragment {
+    public static class SinglePreviewFragment extends Fragment {
         public static final String KEY_URL = "key_url";
         private TouchImageView imageView;
         private String url;
@@ -182,22 +183,26 @@ public class ImagePreviewFragment extends Fragment {
                 @Override
                 public boolean onSingleTapConfirmed(MotionEvent e) {
                     if (enableSingleTap) {
-                        if(mContext instanceof OnImageSingleTapClickListener){
-                            ((OnImageSingleTapClickListener)mContext).onImageSingleTap(e);
+                        if (mContext instanceof OnImageSingleTapClickListener) {
+                            ((OnImageSingleTapClickListener) mContext).onImageSingleTap(e);
                         }
                     }
                     return false;
                 }
-                @Override public boolean onDoubleTapEvent(MotionEvent e) {
+
+                @Override
+                public boolean onDoubleTapEvent(MotionEvent e) {
                     return false;
                 }
-                @Override public boolean onDoubleTap(MotionEvent e) {
+
+                @Override
+                public boolean onDoubleTap(MotionEvent e) {
                     return false;
                 }
 
             });
-
-            ((UilImgLoader)mImagePresenter).onPresentImage2(mContext,imageView, url, imageView.getWidth());//display the image with your own ImageLoader
+            Log.e(TAG, "langneng mImagePresenter:"+mImagePresenter);
+            ((UilImgLoader)mImagePresenter).onPresentImage2(mContext, imageView, url, imageView.getWidth());//display the image with your own ImageLoader
 
         }
 

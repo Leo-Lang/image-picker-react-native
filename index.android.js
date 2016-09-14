@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
- import ImagePicker from 'ImagePicker';
+ import ImagePicker from 'image-picker-react-native';
 
 class ImagePickerLeo extends Component {
   componentDidMount(){

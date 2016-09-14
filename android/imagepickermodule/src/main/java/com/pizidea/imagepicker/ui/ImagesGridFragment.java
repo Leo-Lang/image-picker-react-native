@@ -340,6 +340,7 @@ public class ImagesGridFragment extends Fragment implements OnImagesLoadedListen
                 imageItemView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        Log.e(TAG,"langneng image click");
                         mOnItemClickListener.onItemClick(mGridView, imageItemView,position,position);
                     }
                 });

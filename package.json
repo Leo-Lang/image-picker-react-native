@@ -1,13 +1,25 @@
 {
-  "name": "ImagePicker",
-  "version": "0.1.1",
-  "private": true,
-  "main":"imagepicker.js",
+  "name": "image-picker-react-native",
+  "version": "0.1.2",
+  "private": false,
+  "main": "imagepicker.js",
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
     "react": "15.3.1",
     "react-native": "^0.33.0"
-  }
+  },
+  "description": "该组件基于 https://github.com/easonline/AndroidImagePicker 封装成 react native 版本，并在实现上做了一些改动",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Leo-Lang/image-picker-react-native.git"
+  },
+  "author": "leolang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leo-Lang/image-picker-react-native/issues"
+  },
+  "homepage": "https://github.com/Leo-Lang/image-picker-react-native"
 }

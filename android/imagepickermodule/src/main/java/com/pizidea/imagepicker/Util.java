@@ -22,6 +22,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.os.Environment;
+import android.util.Log;
 import android.util.TypedValue;
 
 import com.nostra13.universalimageloader.utils.L;
@@ -45,6 +46,7 @@ public class Util {
     }
 
     public static boolean isStorageEnable(){
+        Log.e("test", "langneng isStorageEnable getExternalStorageState");
         String sdStatus = Environment.getExternalStorageState();
         if(!sdStatus.equals(Environment.MEDIA_MOUNTED)) {
             L.d("TestFile", "SD card is not available/writable right now.");

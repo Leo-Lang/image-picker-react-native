@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 
 import com.facebook.react.ReactActivity;
+import com.pizidea.imagepicker.ImgLoader;
+import com.pizidea.imagepicker.UilImgLoader;
 
 public class MainActivity extends ReactActivity {
-
+    ImgLoader presenter = new UilImgLoader();
     /**
      * Returns the name of the main component registered from JavaScript.
      * This is used to schedule rendering of the component.
