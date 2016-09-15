@@ -2,6 +2,8 @@
 
 该组件基于 https://github.com/easonline/AndroidImagePicker 封装成 react native 版本，并在实现上做了一些改动
 
+[![](https://github.com/Leo-Lang/image-picker-react-native/docs/imagePicker.gif)](./example)
+
 ## Installation
 
 ```
