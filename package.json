@@ -1,6 +1,6 @@
 {
   "name": "image-picker-react-native",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "main": "imagepicker.js",
   "scripts": {
@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/Leo-Lang/image-picker-react-native/issues"
   },
-  "homepage": "https://github.com/Leo-Lang/image-picker-react-native"
+  "homepage": "https://github.com/Leo-Lang/image-picker-react-native",
+  "directories": {
+    "doc": "docs"
+  }
 }

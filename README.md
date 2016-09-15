@@ -2,6 +2,10 @@
 
 该组件基于 https://github.com/easonline/AndroidImagePicker 封装成 react native 版本，并在实现上做了一些改动
 
+## Features
+* 选图后点击完成，js端获取到所选图url
+* js端可控制选图Activity finish
+
 [![](https://github.com/Leo-Lang/image-picker-react-native/blob/master/docs/imagePicker.gif)](./example)
 
 ## Installation
@@ -47,6 +51,11 @@ protected List<ReactPackage> getPackages() {
 
 ```
 import ImagePicker from 'ImagePicker';
+
+ImagePicker.multiImagePicker(false, (errorMsg) => {
+      }, (selectedUrls) => {
+          ImagePicker.finishMultiImagePicker();
+      });
 
 
 ```
